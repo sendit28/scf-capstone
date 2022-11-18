@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: scf_capstone_production
-  username: scf_capstone
-  password: <%= ENV["SCF_CAPSTONE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>

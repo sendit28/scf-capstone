@@ -25,6 +25,9 @@
         post_id: post.id
       )
     end
+
+    category = Category.create(description: 'code')
+    PostCategory.create( post_id: post.id, category_id: category.id)
   end
 end
 

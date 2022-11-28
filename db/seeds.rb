@@ -13,14 +13,14 @@
     post = Post.create(
       user_id: user.id,
       title: Faker::Hipster.sentence,
-      description: Faker::Hipster.paragraph_by_chars(characters: 500),
-      date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25')
+      description: Faker::Hipster.paragraph_by_chars(characters: 500)
+      # date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25')
     )
   
     5. times do
       user_post_comment = UserPostComment.create(
         comment: Faker::Hipster.paragraph_by_chars(characters: 250),
-        date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25'),
+        # date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25'),
         user_id: user.id,
         post_id: post.id
       )

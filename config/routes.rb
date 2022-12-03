@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   resources :post_categories
   resources :categories
   resources :user_post_comments
-  resources :posts
+  resources :posts, only: [:index, :create]
   resources :users
   
   get 'fallback/index'
 
   # route to test your configuration
-  get '/hello', to: 'application#hello_world'
+  # get '/hello', to: 'application#hello_world'
   post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

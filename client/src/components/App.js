@@ -55,6 +55,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={handleLogoutClick}>Logout</button>
+      <button onClick={() => navigate("/posts/new")}>Create Posts</button>
       <Routes>
         <Route path="/signup" element={<SignUpForm setUser={setUser} />} />
         {/* <Route path="/login" element={<LoginForm setUser={setUser} />} /> */}
@@ -73,7 +74,7 @@ function App() {
         <Route
           path="/posts/new"
           element={
-            <PostForm setPosts={setPosts} user={user} />
+            <PostForm setPosts={setPosts} user={user} posts={posts} />
           }
         />
         

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-function PostForm({ setPosts, user }) {
+function PostForm({ setPosts, user, posts }) {
   const navigate = useNavigate()
   const initialState = {
     title: "",
@@ -34,7 +34,9 @@ function PostForm({ setPosts, user }) {
       body: JSON.stringify(formDataCopy)
     })
       .then(r=> r.json())
-      .then(data => setPosts((posts) => [...posts, data]))
+      .then(data => {
+        setPosts((posts) => [...posts, data])
+      })
       navigate("/posts")
       setFormData(initialState)
   }

@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # config/routes.rb
   resources :post_categories
   resources :categories
-  resources :user_post_comments
-  resources :posts, only: [:index, :create]
+  resources :user_post_comments, only: [:destroy]
+  resources :posts, only: [:index, :create, :destroy]
   resources :users
   
   get 'fallback/index'

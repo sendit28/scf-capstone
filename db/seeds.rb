@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Category.create(description: "tech")
+Category.create(description: "art")
+Category.create(description: "sports")
+Category.create(description: "music")
 
 5. times do
   user = User.create(Faker::Internet.user('username', 'email', 'password'))
@@ -26,8 +30,8 @@
       )
     end
 
-    category = Category.create(description: "code")
-    PostCategory.create(post_id: post.id, category_id: category.id)
+    
+    PostCategory.create(post_id: post.id, category_id: Category.all.sample.id)
   end
 end
 

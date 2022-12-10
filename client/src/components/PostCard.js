@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 function PostCard({ posts, handleDeletePost }) {
   const postItems = posts.map((postObject, index) => {
@@ -17,11 +18,13 @@ function PostCard({ posts, handleDeletePost }) {
         <p>{postObject.title}</p>
         <p>{postObject.date}</p>
         <p>{postObject.description}</p>
+        <ul>{postObject.categories.map(category => <li key={uuidv4()}>{category.description}</li>)}</ul>
         <div><em>Comments</em></div>
-        <ul>{postObject.user_post_comments.map(user_post_comment => <li key={user_post_comment.id}>{user_post_comment.comment}</li>)}</ul>
+        <ul>{postObject.user_post_comments.map(user_post_comment => <li key={uuidv4()}>{user_post_comment.comment}</li>)}</ul>
 
 
         <button onClick={handleDeleteClick}> Delete </button>
+        <hr/>
       </div>
     );
   });

@@ -15,7 +15,7 @@ function PostCard({ posts, handleDeletePost }) {
 
     return (
       <div key={index}>
-        <p>{postObject.title}</p>
+        <h2>{postObject.title}</h2>
         <p>{postObject.date}</p>
         <p>{postObject.description}</p>
         <ul>{postObject.categories.map(category => <li key={uuidv4()}>{category.description}</li>)}</ul>

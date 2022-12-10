@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :post_categories
   resources :categories
   resources :user_post_comments, only: [:destroy]
-  resources :posts, only: [:index, :create, :destroy]
+  resources :posts, only: [:index, :create, :destroy, :show, :update]
   resources :users
   
   get 'fallback/index'

@@ -26,11 +26,11 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   fetch("/posts")
-  //    .then((r) =>r.json())
-  //    .then((data) => setPosts(data));
-  // }, []);
+  useEffect(() => {
+    fetch("/posts")
+     .then((r) =>r.json())
+     .then((data) => setPosts(data));
+  }, []);
 
   // if (!user) return <Login onLogin={setUser} />
 

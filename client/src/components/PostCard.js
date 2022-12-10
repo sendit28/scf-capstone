@@ -18,7 +18,7 @@ function PostCard({ posts, handleDeletePost }) {
         <p>{postObject.date}</p>
         <p>{postObject.description}</p>
         <div><em>Comments</em></div>
-          <p>{postObject.user_post_comments.map(user_post_comment => <ul>{user_post_comment.comment}</ul>)}</p>
+        <ul>{postObject.user_post_comments.map(user_post_comment => <li key={user_post_comment.id}>{user_post_comment.comment}</li>)}</ul>
 
 
         <button onClick={handleDeleteClick}> Delete </button>

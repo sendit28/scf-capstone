@@ -1,4 +1,4 @@
-// import './App.css';
+import '../App.css';
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import SignUpForm from "./SignUpForm";
@@ -6,12 +6,14 @@ import LoginForm from "./LoginForm";
 import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 import PostForm from "./PostForm";
+import EditPostForm from './EditPostForm';
 
 // import Login from '../pages/Login';
 
 function App() {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [updatedPost, setUpdatedPost] = useState(null)
 
   const navigate = useNavigate();
 
@@ -20,7 +22,6 @@ function App() {
       if (r.ok) {
         r.json().then((user) =>{
           setUser(user)
-          // (...user)(data)
         });
       }
     });
@@ -75,6 +76,12 @@ function App() {
           path="/posts/new"
           element={
             <PostForm setPosts={setPosts} user={user} posts={posts} />
+          }
+        />
+        <Route
+          path="/posts/edit"
+          element={
+            <EditPostForm setPosts={setPosts} user={user} posts={posts} />
           }
         />
         

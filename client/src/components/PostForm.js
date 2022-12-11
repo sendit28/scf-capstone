@@ -21,11 +21,8 @@ function PostForm({ setPosts, user, posts }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    // const stateCopy = JSON.parse(JSON.stringify(posts))
     const formDataCopy = {...formData, user_id: user.id}
-    // const formDataCopy = JSON.parse(JSON.stringify({ ...formData, user_id: user.id}))
-
+    
     fetch("/posts", {
       method: "POST",
       headers: {

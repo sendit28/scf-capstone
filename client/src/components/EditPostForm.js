@@ -1,26 +1,21 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost }) {
-  // console.log(updatedPost)
+function EditPostForm({ updatedPost, setUpdatedPost, handleUpdatePost }) {
   const navigate = useNavigate()
   
   const handleSubmit = (e) => {
-    console.log("running handle submit")
     e.preventDefault()
     const config = {
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(updatedPost)
-      // setFormData
     }
     
     fetch(`/posts/${updatedPost.id}`, config)
       .then(function(r){
         return r.json()
       }).then(function(data){
-        console.log(data)
-        // setUpdatedPost(updatedPost)
         handleUpdatePost(data)
         navigate("/posts")
       })
@@ -28,7 +23,6 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
   }
   
   const handleChange = (e) => {
-    console.log("running handle change")
     setUpdatedPost({
       ...updatedPost,
       [e.target.name]: e.target.value

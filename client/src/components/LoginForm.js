@@ -24,7 +24,6 @@ function LoginForm({ setUser, setPosts }) {
         fetch("/posts")
           .then((r) => r.json())
           .then((data) => {
-            // console.log(data)
             setPosts(data)
             navigate("/posts");
           });
@@ -40,7 +39,6 @@ function LoginForm({ setUser, setPosts }) {
   const handleChange = ({ target }) => {
     const stateCopy = JSON.parse(JSON.stringify(credentials));
     stateCopy[target.name] = target.value;
-    console.log(target.value);
     setCredentials(stateCopy);
   };
 

@@ -53,10 +53,19 @@ function App() {
     setPosts(updatedPosts);
   }
 
+  function handleUpdatePost(updatedPost) {
+    const stateCopy = JSON.parse(JSON.stringify(posts))
+    const updatedPosts = stateCopy.map((post) => post.id === updatedPost.id ? updatedPost : post);
+    setPosts(updatedPosts);
+  }
+
   return (
     <div className="App">
-      <button onClick={handleLogoutClick}>Logout</button>
+      <button onClick={() => navigate("/signup")}>SignUp</button>
+      <button onClick={() => navigate("/")}>Login</button>
+      <button onClick={() => navigate("/posts")}>Posts</button>
       <button onClick={() => navigate("/posts/new")}>Create Posts</button>
+      <button onClick={handleLogoutClick}>Logout</button>
       <Routes>
         <Route path="/signup" element={<SignUpForm setUser={setUser} />} />
         {/* <Route path="/login" element={<LoginForm setUser={setUser} />} /> */}
@@ -69,7 +78,7 @@ function App() {
         <Route
           path="/posts"
           element={
-            <PostCard posts={posts} handleDeletePost={handleDeletePost} />
+            <PostCard posts={posts} handleDeletePost={handleDeletePost} handleUpdatePost={handleUpdatePost} setUpdatedPost={setUpdatedPost} />
           }
         />
         <Route
@@ -81,7 +90,7 @@ function App() {
         <Route
           path="/posts/edit"
           element={
-            <EditPostForm setPosts={setPosts} user={user} posts={posts} />
+            <EditPostForm setPosts={setPosts} user={user} posts={posts} updatedPost={updatedPost} setUpdatedPost={setUpdatedPost} handleUpdatePost={handleUpdatePost} />
           }
         />
         

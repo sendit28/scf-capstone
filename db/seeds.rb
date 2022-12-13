@@ -5,10 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Category.create(description: "tech")
-Category.create(description: "art")
-Category.create(description: "sports")
-Category.create(description: "music")
+Category.create(description: "Tech")
+Category.create(description: "Art")
+Category.create(description: "Sports")
+Category.create(description: "Music")
 
 5. times do
   user = User.create(Faker::Internet.user('username', 'email', 'password'))

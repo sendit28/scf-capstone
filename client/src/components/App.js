@@ -1,64 +1,70 @@
 import '../App.css';
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { UserContext } from '../context/UserProvider'
 import { Routes, Route } from "react-router-dom";
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginForm";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 import PostForm from "./PostForm";
 import EditPostForm from './EditPostForm';
 import NavBar from './NavBar';
+// import {handleLogoutClick, handleDeletePost, handleUpdatePost } from './context/UserProvider'
 
 // import Login from '../pages/Login';
 
 function App() {
-  const [user, setUser] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [updatedPost, setUpdatedPost] = useState(null)
+  // const [user, setUser] = useState(null);
+  // const [posts, setPosts] = useState([]);
+  // const [updatedPost, setUpdatedPost] = useState(null)
 
-  const navigate = useNavigate();
+  const {user, setUser, posts, setPosts, updatedPost, setUpdatedPost, navigate, handleLogoutClick, handleDeletePost, handleUpdatePost} = useContext(UserContext)
 
-  useEffect(() => {
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) =>{
-          setUser(user)
-        });
-      }
-    });
-  }, []);
+  console.log(user)
 
-  useEffect(() => {
-    fetch("/posts")
-     .then((r) =>r.json())
-     .then((data) => setPosts(data));
-  }, []);
+  // const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) =>{
+  //         setUser(user)
+  //       });
+  //     }
+  //   });
+  // }, []);
+
+  // useEffect(() => {
+  //   fetch("/posts")
+  //    .then((r) =>r.json())
+  //    .then((data) => setPosts(data));
+  // }, []);
 
   // if (!user) return <LoginForm onLoginForm={setUser} />
 
   
-  const handleLogoutClick = () => {
-    fetch("/logout", {
-      method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-        navigate("/");
-      }
-    });
-  };
+  // const handleLogoutClick = () => {
+  //   fetch("/logout", {
+  //     method: "DELETE",
+  //   }).then((r) => {
+  //     if (r.ok) {
+  //       setUser(null);
+  //       navigate("/");
+  //     }
+  //   });
+  // };
 
-  function handleDeletePost(deletedPost) {
-    const stateCopy = JSON.parse(JSON.stringify(posts))
-    const updatedPosts = stateCopy.filter((post) => post.id !== deletedPost.id);
-    setPosts(updatedPosts);
-  }
+  // function handleDeletePost(deletedPost) {
+  //   const stateCopy = JSON.parse(JSON.stringify(posts))
+  //   const updatedPosts = stateCopy.filter((post) => post.id !== deletedPost.id);
+  //   setPosts(updatedPosts);
+  // }
 
-  function handleUpdatePost(updatedPost) {
-    const stateCopy = JSON.parse(JSON.stringify(posts))
-    const updatedPosts = stateCopy.map((post) => post.id === updatedPost.id ? updatedPost : post);
-    setPosts(updatedPosts);
-  }
+  // function handleUpdatePost(updatedPost) {
+  //   const stateCopy = JSON.parse(JSON.stringify(posts))
+  //   const updatedPosts = stateCopy.map((post) => post.id === updatedPost.id ? updatedPost : post);
+  //   setPosts(updatedPosts);
+  // }
 
   return (
     <div className="App">

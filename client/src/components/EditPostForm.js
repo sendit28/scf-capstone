@@ -5,7 +5,6 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
   const navigate = useNavigate()
   
   const handleSubmit = (e) => {
-    console.log("running handle submit")
     e.preventDefault()
     const config = {
       method: "PATCH",
@@ -17,7 +16,6 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
       .then(function(r){
         return r.json()
       }).then(function(data){
-        console.log(data)
         handleUpdatePost(data)
         navigate("/posts")
       })
@@ -25,7 +23,6 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
   }
   
   const handleChange = (e) => {
-    console.log("running handle change")
     setUpdatedPost({
       ...updatedPost,
       [e.target.name]: e.target.value

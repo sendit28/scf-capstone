@@ -4,13 +4,10 @@ import { UserContext } from '../context/UserProvider'
 import { Routes, Route } from "react-router-dom";
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginForm";
-// import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 import PostForm from "./PostForm";
 import EditPostForm from './EditPostForm';
 import NavBar from './NavBar';
-// import {handleLogoutClick, handleDeletePost, handleUpdatePost } from './context/UserProvider'
-
 // import Login from '../pages/Login';
 
 function App() {
@@ -20,7 +17,7 @@ function App() {
 
   const {user, setUser, posts, setPosts, updatedPost, setUpdatedPost, navigate, handleLogoutClick, handleDeletePost, handleUpdatePost} = useContext(UserContext)
 
-  console.log(user)
+  // console.log(user)
 
   // const navigate = useNavigate();
 

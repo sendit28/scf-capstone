@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost }) {
-  // console.log(updatedPost)
   const navigate = useNavigate()
   
   const handleSubmit = (e) => {
@@ -12,7 +11,6 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
       method: "PATCH",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(updatedPost)
-      // setFormData
     }
     
     fetch(`/posts/${updatedPost.id}`, config)
@@ -20,7 +18,6 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
         return r.json()
       }).then(function(data){
         console.log(data)
-        // setUpdatedPost(updatedPost)
         handleUpdatePost(data)
         navigate("/posts")
       })

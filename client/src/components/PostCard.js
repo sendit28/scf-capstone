@@ -20,25 +20,23 @@ function PostCard({
       });
     }
 
-    function handleUpdateClick() {
-      const updateObj = {
-        title: posts.title,
-        description: posts.description,
-      };
-      fetch(`/posts/${postObject.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updateObj),
-      })
-        .then((r) => r.json())
-        .then((updatedPost) => handleUpdatePost(updatedPost));
-    }
-
-    // console.log(postObject)
-    // setUpdatedPost(postObject)
+    // function handleUpdateClick() {
+    //   const updateObj = {
+    //     title: posts.title,
+    //     description: posts.description,
+    //   };
+    //   fetch(`/posts/${postObject.id}`, {
+    //     method: "PATCH",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(updateObj),
+    //   })
+    //     .then((r) => r.json())
+    //     .then((updatedPost) => handleUpdatePost(updatedPost));
     // }
+
+   
 
     return (
       <div key={index}>

@@ -2,7 +2,6 @@
 
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import App from "../components/App";
 
 export const UserContext = createContext();
 
@@ -11,8 +10,6 @@ const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
   const [updatedPost, setUpdatedPost] = useState(null)
-
-  console.log(user)
 
   const navigate = useNavigate();
 

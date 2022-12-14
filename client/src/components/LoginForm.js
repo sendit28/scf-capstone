@@ -24,7 +24,6 @@ function LoginForm({ setUser, setPosts }) {
         fetch("/posts")
           .then((r) => r.json())
           .then((data) => {
-            // console.log(data)
             setPosts(data)
             navigate("/posts");
           });

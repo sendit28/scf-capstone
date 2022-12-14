@@ -4,9 +4,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useNavigate } from 'react-router-dom';
+
+const linkStyle = {textDecoration: "none", color: "grey"}
 
 function NavBar({handleLogoutClick}) {
-
+ const navigate = useNavigate()
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -14,10 +17,12 @@ function NavBar({handleLogoutClick}) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link link to="/posts">Posts</Nav.Link>
-            <Nav.Link href="/posts/new">Publish</Nav.Link>
-            <Nav.Link href="/logout">Logout</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+          <Nav.Link><Link style={linkStyle} to="/posts">Posts</Link></Nav.Link>
+          <Nav.Link><Link style={linkStyle} to="/posts/new">Publish</Link></Nav.Link>
+          <Nav.Link><Link style={linkStyle} to="/signup">Signup</Link></Nav.Link>
+          <Nav.Link><Link style={linkStyle} to="/">Login</Link></Nav.Link>
+          <Nav.Link><Link style={linkStyle} to="/" onClick={handleLogoutClick}>Logout</Link></Nav.Link>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

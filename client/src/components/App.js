@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import PostCard from "./PostCard";
 import PostForm from "./PostForm";
 import EditPostForm from './EditPostForm';
+import NavBar from './NavBar';
 
 // import Login from '../pages/Login';
 
@@ -33,7 +34,7 @@ function App() {
      .then((data) => setPosts(data));
   }, []);
 
-  // if (!user) return <Login onLogin={setUser} />
+  // if (!user) return <LoginForm onLoginForm={setUser} />
 
   
   const handleLogoutClick = () => {
@@ -61,6 +62,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar handleLogoutClick={handleLogoutClick} />
       <button onClick={() => navigate("/signup")}>SignUp</button>
       <button onClick={() => navigate("/")}>Login</button>
       <button onClick={() => navigate("/posts")}>Posts</button>

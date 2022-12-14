@@ -66,6 +66,7 @@ function LoginForm({ setUser, setPosts }) {
 
         <input type="submit"></input>
       </form>
+      
     </div>
   );
 }

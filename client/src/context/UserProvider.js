@@ -1,5 +1,3 @@
-// src/context/UserContext.js
-
 import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -30,6 +28,7 @@ const UserProvider = ({ children }) => {
     }).then((r) => {
       if (r.ok) {
         setUser(null);
+        setPosts([]);
         navigate("/");
       }
     });

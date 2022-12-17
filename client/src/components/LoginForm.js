@@ -101,7 +101,7 @@ function LoginForm({ setUser, setPosts }) {
               {errors.map((err) => <div key={err} style={{color: "red"}}>{err}</div>)}
               <p className="ms-5">
                 Don't have an account?{" "}
-                <Link to="/signup">Signup Here</Link>
+                <Link to="/signup">Signup</Link>
                 {/* <a href="#!" class="link-info">
                   Register here
                 </a> */}

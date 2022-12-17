@@ -86,9 +86,9 @@ function PostForm({ setPosts, user, posts }) {
               />
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
-                label="Content"
+                label="Post"
                 id="formControlLg"
-                name="date"
+                name="description"
                 type="text"
                 size="lg"
                 onChange={handleChange}

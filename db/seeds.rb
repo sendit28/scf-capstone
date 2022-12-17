@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+
+
 Category.create(description: "Tech")
 Category.create(description: "Art")
 Category.create(description: "Sports")
@@ -17,7 +21,7 @@ Category.create(description: "Music")
     post = Post.create(
       user_id: user.id,
       title: Faker::Hipster.sentence,
-      description: Faker::Hipster.paragraph_by_chars(characters: 500)
+      description: Faker::Hipster.paragraph_by_chars(characters: 1000)
       # date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25')
     )
   

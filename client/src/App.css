@@ -39,4 +39,5 @@
 
 li.cat-desc {
   list-style: none;
+  font-weight: bold;
 }

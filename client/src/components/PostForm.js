@@ -7,6 +7,7 @@ import {
   MDBCol,
   MDBIcon,
   MDBInput,
+  MDBTextArea
 } from "mdb-react-ui-kit";
 
 
@@ -84,7 +85,7 @@ function PostForm({ setPosts, user, posts }) {
                 onChange={handleChange}
                 value={formData.date}
               />
-              <MDBInput
+              <MDBTextArea rows={6}
                 wrapperClass="mb-4 mx-5 w-100"
                 label="Post"
                 id="formControlLg"
@@ -95,7 +96,7 @@ function PostForm({ setPosts, user, posts }) {
                 value={formData.description}
               />
 
-              <MDBBtn className="mb-4 px-5 mx-5 w-100" color="info" size="lg" type="submit"> Publish
+              <MDBBtn className="mb-4 px-5 mx-5 w-100" color="info" size="md" type="submit"> Publish
               </MDBBtn>
               {/* {errors.map((err) => <div key={err} style={{color: "red"}}>{err}</div>)} */}
               {/* <p className="ms-5">

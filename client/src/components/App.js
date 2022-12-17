@@ -66,11 +66,11 @@ function App() {
   return (
     <div className="App">
       <NavBar handleLogoutClick={handleLogoutClick} />
-      <button onClick={() => navigate("/signup")}>SignUp</button>
+      {/* <button onClick={() => navigate("/signup")}>SignUp</button>
       <button onClick={() => navigate("/")}>Login</button>
       <button onClick={() => navigate("/posts")}>Posts</button>
       <button onClick={() => navigate("/posts/new")}>Create Posts</button>
-      <button onClick={handleLogoutClick}>Logout</button>
+      <button onClick={handleLogoutClick}>Logout</button> */}
       <Routes>
         <Route path="/signup" element={<SignUpForm setUser={setUser} />} />
         {/* <Route path="/login" element={<LoginForm setUser={setUser} />} /> */}

@@ -119,5 +119,3 @@ function PostForm({ setPosts, user, posts }) {
 }
 
 export default PostForm;
-
-

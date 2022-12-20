@@ -5,7 +5,7 @@ Show and Tell is a single page application using Ruby on Rails and Active Record
 ## Usage
 The vision for this project was creating a space to show and tell whatever is of interest in the form of writing and photography.  There are five links of a Login, Signup, Posts, Publish, and Logout.
 
-The posts include associations of a category and user post comments.  There is full CRUD on the blog posts.
+The posts include associations of a category and user post comments.  Full CRUD is on the post model.  Implementation of password protection and authentication, validations and error handling.
 
 This project is still in development.  In the future, there will be more specific types of categories or the option to create your own.  There will also be the option to favorite and like posts.
 
@@ -27,9 +27,39 @@ $ rails s
 This will run your server on port
 [http://localhost:3000](http://localhost:3000).
 
+Ruby Version 2.7.4
+```console
+rvm install 2.7.4 --default
+```
+install latest versions of bundler and rails:
+```console
+gem install bundler
+gem install rails
+```
+Node version 16.x.x
+```console
+nvm install 16
+nvm use 16
+nvm alias default 16
+```
+Install Postgresql
 
-gem "rails", "~> 7.0.4"
-gem "pg", "~> 1.1"
+```console
+sudo apt update
+sudo apt install postgresql postgresql-contrib libpq-dev
+```
+Postgres service
+Windows
+```console
+sudo service postgresql start
+```
+Mac
+```console
+brew services start postgresql
+```
+
+### Deployment
+Render
 
 
 ### Contributing

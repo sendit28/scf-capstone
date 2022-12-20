@@ -52,7 +52,7 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
               className="fw-normal mb-3 ps-5 pb-3"
               style={{ letterSpacing: "1px" }}
             >
-              Create
+              Update
             </h3>
 
             <MDBInput
@@ -65,7 +65,7 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
               onChange={handleChange}
               value={updatedPost.title}
             />
-            <MDBInput
+            {/* <MDBInput
               wrapperClass="mb-4 mx-5 w-100"
               label="Date"
               id="formControlLg"
@@ -74,8 +74,8 @@ function EditPostForm({ updatedPost, setUpdatedPost, setPosts, handleUpdatePost 
               size="lg"
               onChange={handleChange}
               value={updatedPost.date}
-            />
-            <MDBTextArea rows={4}
+            /> */}
+            <MDBTextArea rows={8}
               wrapperClass="mb-4 mx-5 w-100"
               label="Post"
               id="formControlLg"

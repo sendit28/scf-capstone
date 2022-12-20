@@ -3,14 +3,13 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { UserContext } from "../context/UserProvider";
 
 const linkStyle = { textDecoration: "none", color: "grey" };
 
 function NavBar({ handleLogoutClick }) {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { user } = useContext(UserContext);
   return (
     <Navbar bg="light" expand="lg">

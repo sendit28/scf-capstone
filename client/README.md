@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Show and Tell Blog
 
+Show and Tell is a single page application using Ruby on Rails and Active Record as backend to support a React frontend.
+
+
+## Usage
+The vision for this project was creating a space to show and tell whatever is of interest in the form of writing and photography.  There are five links of a Login, Signup, Posts, Publish, and Logout.
+
+The posts include associations of a category and user post comments.  There is full CRUD on the blog posts.
+
+This project is still in development.  In the future, there will be more specific types of categories or the option to create your own.  There will also be the option to favorite and like posts.
+
+## Installation
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Clone this repository by using git@github.com/sendit28/scf-capstone
 
-In the project directory, you can run:
+```console
+$git clone git@github.com/sendit28/scf-capstone.git
+```
 
-### `npm start`
+### Frontend Setup
+
+```console
+npm install
+```
+You can start your server with:
+```console
+npm start --prefix server
+```
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:4000](http://localhost:4000) to view it in your 
+browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Technologies
+```console
+npm install react-bootstrap bootstrap
+```
+```console
+npm i mdb-react-ui-kit
+```
+```console
+npm i @fortawesome/fontawesome-free
+```
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### `npm test`
+Please make sure to update tests as appropriate.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### License
+The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-### `npm run build`
+### Author
+https://github.com/sendit28
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

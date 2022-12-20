@@ -5,9 +5,7 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBIcon,
   MDBInput,
-  MDBCardImage,
   MDBTextArea,
 } from "mdb-react-ui-kit";
 
@@ -15,7 +13,6 @@ function PostForm({ setPosts, user, posts }) {
   const navigate = useNavigate();
   const initialState = {
     title: "",
-    date: "",
     img_url: "",
     description: "",
   };
@@ -53,7 +50,6 @@ function PostForm({ setPosts, user, posts }) {
       <MDBRow>
         <MDBCol sm="6">
           <div className="d-flex flex-row ps-5 pt-5">
-            {/* <MDBIcon fas icon="crow fa-3x me-3" style={{ color: '#709085' }}/> */}
             <span className="h1 fw-bold mb-0">Begin your Show and Tell</span>
           </div>
           <form onSubmit={handleSubmit}>
@@ -75,16 +71,6 @@ function PostForm({ setPosts, user, posts }) {
                 onChange={handleChange}
                 value={formData.title}
               />
-              {/* <MDBInput
-                wrapperClass="mb-4 mx-5 w-100"
-                label="Date"
-                id="formControlLg"
-                name="date"
-                type="text"
-                size="lg"
-                onChange={handleChange}
-                value={formData.date}
-              /> */}
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 label="Image"
@@ -106,7 +92,6 @@ function PostForm({ setPosts, user, posts }) {
                 onChange={handleChange}
                 value={formData.description}
               />
-
               <MDBBtn
                 className="mb-4 px-5 mx-5 w-100"
                 color="info"
@@ -116,14 +101,6 @@ function PostForm({ setPosts, user, posts }) {
                 {" "}
                 Publish
               </MDBBtn>
-              {/* {errors.map((err) => <div key={err} style={{color: "red"}}>{err}</div>)} */}
-              {/* <p className="ms-5">
-                Don't have an account?{" "}
-                <Link to="/signup">Signup Here</Link> */}
-              {/* <a href="#!" class="link-info">
-                  Register here
-                </a> */}
-              {/* </p> */}
             </div>
           </form>
         </MDBCol>
@@ -131,7 +108,7 @@ function PostForm({ setPosts, user, posts }) {
         <MDBCol sm="6" className="d-none d-sm-block px-0">
           <img
             src="https://images.pexels.com/photos/839443/pexels-photo-839443.jpeg?auto=compress&cs=tinysrgb&w=1600"
-            alt="Login image"
+            alt="Login"
             className="w-100"
             style={{ objectFit: "cover", objectPosition: "left" }}
           />
@@ -143,17 +120,4 @@ function PostForm({ setPosts, user, posts }) {
 
 export default PostForm;
 
-{
-  /* <div className="post-form">
-      <h2> Share your Show and Tell </h2>
-      <form onSubmit={handleSubmit}>
-        <label> Title </label>
-        <input name="title" type="text" onChange={handleChange} value={formData.title}/>
-        <label> Date </label>
-        <input name="date" type="text" onChange={handleChange} value={formData.date}/>
-        <label> Post </label>
-        <input name="description" type="text" onChange={handleChange} value={formData.description}/>
-        <input type="submit"></input>
-      </form>
-    </div> */
-}
+

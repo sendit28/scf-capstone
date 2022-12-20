@@ -73,7 +73,7 @@ function SignUpForm({ setUser }) {
                 className="fw-normal mb-3 ps-5 pb-3"
                 style={{ letterSpacing: "1px" }}
               >
-                Sign Up
+                Sign Up Here!
               </h3>
 
               <MDBInput

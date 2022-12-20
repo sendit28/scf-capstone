@@ -64,7 +64,6 @@ function SignUpForm({ setUser }) {
       <MDBRow>
         <MDBCol sm="6">
           <div className="d-flex flex-row ps-5 pt-5">
-            {/* <MDBIcon fas icon="crow fa-3x me-3" style={{ color: '#709085' }}/> */}
             <span className="h1 fw-bold mb-0">Show and Tell Blog</span>
           </div>
           <form onSubmit={handleSubmit}>
@@ -73,7 +72,7 @@ function SignUpForm({ setUser }) {
                 className="fw-normal mb-3 ps-5 pb-3"
                 style={{ letterSpacing: "1px" }}
               >
-                Sign Up
+                Sign Up Here!
               </h3>
 
               <MDBInput
@@ -128,9 +127,6 @@ function SignUpForm({ setUser }) {
               ))}
               <p className="ms-5">
                 Already have an account? <Link to="/">Login</Link>
-                {/* <a href="#!" class="link-info">
-                  Register here
-                </a> */}
               </p>
             </div>
           </form>
@@ -144,7 +140,6 @@ function SignUpForm({ setUser }) {
             style={{ objectFit: "cover", objectPosition: "left" }}
           />
         </MDBCol>
-        {/* "https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp" */}
       </MDBRow>
     </MDBContainer>
   );
@@ -153,30 +148,3 @@ function SignUpForm({ setUser }) {
 export default SignUpForm;
 
 
-  /* <div className="signup-form">
-      <h2>Signup here</h2>
-      <form onSubmit={handleSubmit}>
-        <label> Username </label>
-        <input name="username" type="text" value={username} onChange={(e) => setUsername(e.target.value)}></input>
-        
-        <label> Email </label>
-        <input name="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-
-        <label> Password </label>
-        <input name="password" type="text" value={password} onChange={(e) => setPassword(e.target.value)}></input>
-
-        <label> Password Confirmation</label>
-        <input name="password-confirmation" type="text" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}></input>
-
-        <input type="submit"></input>
-
-        
-        {/* <div>
-           {errors.map((err) => (
-            <div key={err}>{err}</div>
-          ))}
-        </div> */
-
-
-//   </form>
-// </div> */}

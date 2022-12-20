@@ -1,24 +1,47 @@
-# README
+# Show and Tell Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Show and Tell is a single page application using Ruby on Rails and Active Record as backend to support a React frontend.
 
-Things you may want to cover:
+## Usage
+The vision for this project was creating a space to show and tell whatever is of interest in the form of writing and photography.  There are five links of a Login, Signup, Posts, Publish, and Logout.
 
-* Ruby version
+The posts include associations of a category and user post comments.  There is full CRUD on the blog posts.
 
-* System dependencies
+This project is still in development.  In the future, there will be more specific types of categories or the option to create your own.  There will also be the option to favorite and like posts.
 
-* Configuration
+## Installation
+Clone this repository by using git@github.com/sendit28/scf-capstone
+```console
+$ git clone git@github.com:sendi28/scf-capstone.git
+```
+### Backend Setup
 
-* Database creation
+`bundle install` to install the gems.
 
-* Database initialization
+You can start your server with:
 
-* How to run the test suite
+```console
+$ rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+This will run your server on port
+[http://localhost:3000](http://localhost:3000).
 
-* Deployment instructions
 
-* ...
+gem "rails", "~> 7.0.4"
+gem "pg", "~> 1.1"
+
+
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+### License
+The project is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+### Author
+https://github.com/sendit28
+
+
+

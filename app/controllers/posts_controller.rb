@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   end
 
   def create 
-    # binding.pry
     post = Post.new(post_params)
     post.user_id = @current_user.id
     post.save
@@ -25,18 +24,16 @@ class PostsController < ApplicationController
     render json: post, status: :accepted
   end
 
-  # binding.pry
   def destroy
     post = Post.find_by(id: params[:id])
     post.destroy
-    # head :no_content
     render json: post, status: :ok
   end
 
   private
 
   def post_params
-    params.permit(:title, :date, :description, :img_url)
+    params.permit(:title, :description, :img_url)
   end
 
 end

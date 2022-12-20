@@ -12,8 +12,8 @@ import {
   MDBCardImage,
   MDBCardLink,
   MDBRow,
-  MDBCol
-} from 'mdb-react-ui-kit';
+  MDBCol,
+} from "mdb-react-ui-kit";
 
 function PostCard({
   posts,
@@ -65,60 +65,103 @@ function PostCard({
     //         <small className='text-muted'>Last updated 3 mins ago</small>
     //       </MDBCardText>
 
-
-   
+    // {postObject.img_url}
 
     return (
       <div key={index}>
-        <MDBCard className= "ms-5 me-5 mb-6 mt-5">
-        {/* <MDBCardBody className= "ms-5 me-5 mb-6 mt-5" > */}
-        <MDBRow className='g-0'>
-        <MDBCol md='4'>
-          <MDBCardImage src='https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp' alt='...' fluid />
-        </MDBCol>
-        <MDBCol md='8'>
-        <MDBCardBody className= "ms-5 me-5 mb-6 mt-2" >
-        <MDBCardTitle style={{fontSize: 40}}>{postObject.title}</MDBCardTitle>
-        <MDBCardSubTitle>{postObject.date}</MDBCardSubTitle>
-        <MDBCardText>{postObject.description}</MDBCardText>
-        <MDBCardSubTitle>
-            {postObject.categories.map((category) => (
-              <li className="cat-desc" key={uuidv4()}>
-                {category.description}
-              </li>
-            ))}
-          </MDBCardSubTitle>
-          <div>
-            <em>Comments</em>
-          </div>
-          <ul>
-          <MDBCardText>
-            {postObject.user_post_comments.map((user_post_comment) => (
-              <small className='text-muted' key={uuidv4()}>{user_post_comment.comment}<hr/></small>
-            ))}
-          </MDBCardText>
-          </ul>
+        {/* <div
+        className='p-5 text-center bg-image'
+        style={{ backgroundImage: "url(https://img.freepik.com/free-photo/eucalyptus-silver-dollar-white-marble-banner_53876-129661.jpg?w=2000)", height: '200px' }}
+      ></div> */}
+        <MDBCard className="ms-5 me-5 mb-6 mt-5">
+          {/* <MDBCardBody className= "ms-5 me-5 mb-6 mt-5" > */}
+          <MDBRow className="g-0">
+            <MDBCol className= "text-center" md='4'>
+            <MDBCardImage
+              src={postObject.img_url}
+              alt="..."
+              fluid
+              style={{ padding: "10%", height: "65%" }}
+              // className="ms-5 me-5 mb-6 mt-5"
+              
+            />
+            </MDBCol>
+            <MDBCol md="8">
+              <MDBCardBody className="ms-5 me-5 mb-6 mt-2">
+                <MDBCardTitle style={{ fontSize: 40 }}>
+                  {postObject.title}
+                </MDBCardTitle>
+                <MDBCardSubTitle>{postObject.date}</MDBCardSubTitle>
+                <MDBCardText>{postObject.description}</MDBCardText>
+                <MDBCardSubTitle>
+                  {postObject.categories.map((category) => (
+                    <li className="cat-desc" key={uuidv4()}>
+                      {category.description}
+                    </li>
+                  ))}
+                </MDBCardSubTitle>
+                <div>
+                  <em>Comments</em>
+                </div>
+                <ul>
+                  <MDBCardText>
+                    {postObject.user_post_comments.map((user_post_comment) => (
+                      <small className="text-muted" key={uuidv4()}>
+                        {user_post_comment.comment}
+                        <hr />
+                      </small>
+                    ))}
+                  </MDBCardText>
+                </ul>
 
-          <MDBBtn className="mb-4 px-5 mx-5 w-10" color="info" size="sm" onClick={handleDeleteClick}> Delete </MDBBtn>
-          <MDBBtn className="mb-4 px-5 mx-5 w-10" color="info" size="sm"  onClick={() => {
-            setUpdatedPost({...postObject})
-            navigate("/posts/edit")
-            }}> Update </MDBBtn>
-
-        </MDBCardBody>
-        </MDBCol>
-        </MDBRow>
-      </MDBCard>
+                <MDBBtn
+                  className="mb-4 px-5 mx-5 w-10"
+                  color="info"
+                  size="sm"
+                  onClick={handleDeleteClick}
+                >
+                  {" "}
+                  Delete{" "}
+                </MDBBtn>
+                <MDBBtn
+                  className="mb-4 px-5 mx-5 w-10"
+                  color="info"
+                  size="sm"
+                  onClick={() => {
+                    setUpdatedPost({ ...postObject });
+                    navigate("/posts/edit");
+                  }}
+                >
+                  {" "}
+                  Update{" "}
+                </MDBBtn>
+              </MDBCardBody>
+            </MDBCol>
+          </MDBRow>
+        </MDBCard>
       </div>
     );
   });
 
-  return <div className="post-card">{postItems}</div>;
+  return (
+    <div className="post-card">
+      <div
+        className="p-5 text-center bg-image"
+        style={{
+          backgroundImage:
+            "url(https://img.freepik.com/free-photo/eucalyptus-silver-dollar-white-marble-banner_53876-129661.jpg?w=2000)",
+          height: "200px",
+        }}
+      ></div>
+      {postItems}
+    </div>
+  );
 }
 
 export default PostCard;
 
-{/* <div key={index}>
+{
+  /* <div key={index}>
         <h2>{postObject.title}</h2>
         <p>{postObject.date}</p>
         <p>{postObject.description}</p>
@@ -146,4 +189,7 @@ export default PostCard;
         <hr />
       </div>
     );
-  }); */}
+  }); */
+}
+
+// 'https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp'

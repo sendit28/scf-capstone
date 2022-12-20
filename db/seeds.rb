@@ -1,13 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 
-
-
+post_images = [
+  "https://www.rd.com/wp-content/uploads/2020/04/GettyImages-1093840488-5-scaled.jpg",
+  "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg",
+  "https://cdn01.pinkoi.com/product/f5NwVEkf/0/3/640x530.jpg",
+  'https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.webp'
+]
 
 Category.create(description: "Tech")
 Category.create(description: "Art")
@@ -21,7 +18,8 @@ Category.create(description: "Music")
     post = Post.create(
       user_id: user.id,
       title: Faker::Hipster.sentence,
-      description: Faker::Hipster.paragraph_by_chars(characters: 1000)
+      description: Faker::Hipster.paragraph_by_chars(characters: 1000),
+      img_url: post_images.sample
       # date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25')
     )
   

@@ -35,12 +35,15 @@ Open [http://localhost:4000](http://localhost:4000) to view it in your
 browser.
 
 ### Technologies
+React Bootstrap
 ```console
 npm install react-bootstrap bootstrap
 ```
+MDB Bootstrap
 ```console
 npm i mdb-react-ui-kit
 ```
+Font Awesome
 ```console
 npm i @fortawesome/fontawesome-free
 ```

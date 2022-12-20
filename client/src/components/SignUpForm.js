@@ -12,7 +12,6 @@ import { UserContext } from "../context/UserProvider";
 
 function SignUpForm({ setUser }) {
   const [errors, setErrors] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const [userData, setUserData] = useState({
     username: "",
@@ -25,7 +24,6 @@ function SignUpForm({ setUser }) {
   function handleSubmit(e) {
     e.preventDefault();
     setErrors([]);
-    setIsLoading(true);
     fetch("/signup", {
       method: "POST",
       headers: {
@@ -33,7 +31,6 @@ function SignUpForm({ setUser }) {
       },
       body: JSON.stringify(userData)
     }).then((r) => {
-      setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);

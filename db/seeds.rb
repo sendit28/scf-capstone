@@ -20,19 +20,16 @@ Category.create(description: "Music")
       title: Faker::Hipster.sentence,
       description: Faker::Hipster.paragraph_by_chars(characters: 1000),
       img_url: post_images.sample
-      # date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25')
     )
   
     5. times do
       user_post_comment = UserPostComment.create(
         comment: Faker::Hipster.paragraph_by_chars(characters: 250),
-        # date: Faker::Date.between(from: '2022-01-01', to: '2022-12-25'),
         user_id: user.id,
         post_id: post.id
       )
     end
 
-    
     PostCategory.create(post_id: post.id, category_id: Category.all.sample.id)
   end
 end

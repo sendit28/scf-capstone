@@ -15,7 +15,7 @@ function NavBar({ handleLogoutClick }) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Show and Tell</Navbar.Brand>
+        <Navbar.Brand style={{fontSize: 40}} href="#home">Show and Tell</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {user ? <Nav.Link>

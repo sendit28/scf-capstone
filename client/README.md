@@ -1,14 +1,15 @@
 # Show and Tell Blog
 
-Show and Tell is a single page application using Ruby on Rails and Active Record as backend to support a React frontend.
+Show and Tell is a single page blog application using Ruby on Rails and Active Record as backend to support a React frontend.
 
 
 ## Usage
 The vision for this project was creating a space to show and tell whatever is of interest in the form of writing and photography.  There are five links of a Login, Signup, Posts, Publish, and Logout.
 
-The posts include associations of a category and user post comments.  There is full CRUD on the blog posts.
+The posts include associations of a category and user post comments.  Full CRUD is on the post model.  Implementation of password protection and authentication, validations and error handling.
 
-This project is still in development.  In the future, there will be more specific types of categories or the option to create your own.  There will also be the option to favorite and like posts.
+This project is still in development.  In the future, there will be more specific types of categories or the option to create your own.  There will also be the option to favorite and like posts.  Google API maps to showcase location of post.
+
 
 ## Installation
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

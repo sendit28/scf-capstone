@@ -61,7 +61,7 @@ function LoginForm({ setUser, setPosts }) {
       <MDBRow>
         <MDBCol sm="6">
           <div className="d-flex flex-row ps-5 pt-5">
-            <span className="h1 fw-bold mb-0">Show and Tell Blog</span>
+            <span className="h1 fw-bold mb-0">Welcome Back.</span>
           </div>
           <form onSubmit={handleSubmit}>
             <div className="d-flex flex-column justify-content-center h-custom-2 w-75 pt-4">
